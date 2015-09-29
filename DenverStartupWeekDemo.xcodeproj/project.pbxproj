@@ -192,6 +192,7 @@
 				TargetAttributes = {
 					BFC3FE1A1BB9DD9D00D9D623 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = GC9H98YYUW;
 					};
 					BFC3FE2E1BB9DD9D00D9D623 = {
 						CreatedOnToolsVersion = 7.0;
@@ -396,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DenverStartupWeekDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uiguigo.DenverStartupWeekDemo;
@@ -407,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DenverStartupWeekDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uiguigo.DenverStartupWeekDemo;
@@ -481,6 +484,7 @@
 				BFC3FE451BB9DD9D00D9D623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFC3FE461BB9DD9D00D9D623 /* Build configuration list for PBXNativeTarget "DenverStartupWeekDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +493,7 @@
 				BFC3FE481BB9DD9D00D9D623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFC3FE491BB9DD9D00D9D623 /* Build configuration list for PBXNativeTarget "DenverStartupWeekDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +502,7 @@
 				BFC3FE4B1BB9DD9D00D9D623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
