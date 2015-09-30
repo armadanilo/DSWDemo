@@ -15,70 +15,70 @@ provides-member:
 - ["C21DenverStartupWeekDemo20DetailViewController", ""]
 - ["C21DenverStartupWeekDemo18EventTableViewCell", ""]
 provides-dynamic-lookup:
+- "date"
+- "eventWhen"
+- "eventAddress"
+- "viewDidLoad"
+- "viewDidLoad"
+- "city"
+- "address"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "longitude"
+- "information"
+- "eventLabel"
+- "eventDescription"
+- "zipcode"
+- "eventDistance"
 - "state"
+- "latitude"
 - "time"
 - "getDirections"
 - "prepareForSegue"
-- "eventDistance"
-- "eventLabel"
+- "eventWhere"
 - "event"
-- "latitude"
+- "eventWhat"
+- "eventCityStateZip"
 - "numberOfAttendees"
 - "distance"
-- "eventWhat"
-- "title"
-- "eventAddress"
 - "eventDateTime"
-- "date"
-- "eventDescription"
-- "eventWhere"
-- "city"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "address"
-- "eventWhen"
-- "viewDidLoad"
-- "viewDidLoad"
-- "information"
-- "longitude"
-- "eventCityStateZip"
-- "zipcode"
+- "title"
 depends-top-level:
-- !private "segueIdentifier"
-- !private "CLLocationDegrees"
-- "StringLiteralType"
-- "UIViewController"
-- "NSObject"
-- "String"
-- "UILabel"
-- "UITableViewDelegate"
-- "EventTableViewCell"
-- !private "+"
-- "Int"
-- !private "arc4random_uniform"
-- "Double"
-- "NSIndexPath"
-- "UIStoryboardSegue"
-- !private "CLLocation"
-- !private "=="
 - "MainViewController"
-- "Event"
-- !private "print"
-- "AnyObject"
-- "UITableViewCell"
-- "UITableView"
-- "UITextView"
-- !private "metersToMiles"
-- !private "eventCellIdentifier"
-- "CGFloat"
-- "DetailViewController"
-- "UITableViewDataSource"
+- !private "+"
+- "StringLiteralType"
+- "NSObject"
 - !private "*"
 - !private "UnicodeScalarType"
+- "Event"
+- !private "print"
+- "UITableView"
+- "UITextView"
+- "Int"
+- !private "metersToMiles"
+- "DetailViewController"
+- !private "eventCellIdentifier"
+- "UITableViewCell"
+- "UITableViewDataSource"
+- "EventTableViewCell"
+- !private "=="
+- "CGFloat"
+- "UIViewController"
+- "AnyObject"
+- "UITableViewDelegate"
+- "String"
+- !private "arc4random_uniform"
+- !private "CLLocation"
+- "UIStoryboardSegue"
+- "UILabel"
+- !private "CLLocationDegrees"
+- "NSIndexPath"
+- "Double"
+- !private "segueIdentifier"
 depends-member:
 - !private ["PSs9AnyObject", "CLLocation"]
 - ["PSs9AnyObject", "Event"]
@@ -108,7 +108,7 @@ depends-member:
 - ["PSs9AnyObject", "eventWhere"]
 - ["PSs9AnyObject", "events"]
 - ["PSs9AnyObject", "fillOutData"]
-- ["PSs9AnyObject", "fillUpThatDataSon"]
+- ["PSs9AnyObject", "fillUpThatData"]
 - ["PSs9AnyObject", "getDirections"]
 - !private ["PSs9AnyObject", "identifier"]
 - ["PSs9AnyObject", "information"]
@@ -207,7 +207,7 @@ depends-member:
 - ["PSs11CVarArgType", "eventWhere"]
 - ["PSs11CVarArgType", "events"]
 - ["PSs11CVarArgType", "fillOutData"]
-- ["PSs11CVarArgType", "fillUpThatDataSon"]
+- ["PSs11CVarArgType", "fillUpThatData"]
 - ["PSs11CVarArgType", "getDirections"]
 - !private ["PSs11CVarArgType", "identifier"]
 - ["PSs11CVarArgType", "information"]
@@ -303,7 +303,7 @@ depends-member:
 - ["PSs23CustomStringConvertible", "eventWhere"]
 - ["PSs23CustomStringConvertible", "events"]
 - ["PSs23CustomStringConvertible", "fillOutData"]
-- ["PSs23CustomStringConvertible", "fillUpThatDataSon"]
+- ["PSs23CustomStringConvertible", "fillUpThatData"]
 - ["PSs23CustomStringConvertible", "getDirections"]
 - !private ["PSs23CustomStringConvertible", "identifier"]
 - ["PSs23CustomStringConvertible", "information"]
@@ -391,7 +391,7 @@ depends-member:
 - ["PSs9Equatable", "eventWhere"]
 - ["PSs9Equatable", "events"]
 - ["PSs9Equatable", "fillOutData"]
-- ["PSs9Equatable", "fillUpThatDataSon"]
+- ["PSs9Equatable", "fillUpThatData"]
 - ["PSs9Equatable", "getDirections"]
 - !private ["PSs9Equatable", "identifier"]
 - ["PSs9Equatable", "information"]
@@ -489,7 +489,7 @@ depends-member:
 - ["PSs8Hashable", "eventWhere"]
 - ["PSs8Hashable", "events"]
 - ["PSs8Hashable", "fillOutData"]
-- ["PSs8Hashable", "fillUpThatDataSon"]
+- ["PSs8Hashable", "fillUpThatData"]
 - ["PSs8Hashable", "getDirections"]
 - !private ["PSs8Hashable", "identifier"]
 - ["PSs8Hashable", "information"]
@@ -571,7 +571,7 @@ depends-member:
 - ["C21DenverStartupWeekDemo18MainViewController", "deinit"]
 - !private ["C21DenverStartupWeekDemo18MainViewController", "eventCellIdentifier"]
 - !private ["C21DenverStartupWeekDemo18MainViewController", "events"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "fillUpThatDataSon"]
+- !private ["C21DenverStartupWeekDemo18MainViewController", "fillUpThatData"]
 - ["C21DenverStartupWeekDemo18MainViewController", "init"]
 - !private ["C21DenverStartupWeekDemo18MainViewController", "metersToMiles"]
 - ["C21DenverStartupWeekDemo18MainViewController", "numberOfSectionsInTableView"]
@@ -645,7 +645,7 @@ depends-member:
 - ["PSo8NSCoding", "eventWhere"]
 - ["PSo8NSCoding", "events"]
 - ["PSo8NSCoding", "fillOutData"]
-- ["PSo8NSCoding", "fillUpThatDataSon"]
+- ["PSo8NSCoding", "fillUpThatData"]
 - ["PSo8NSCoding", "getDirections"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "metersToMiles"]
@@ -695,7 +695,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "eventWhere"]
 - ["PSo26NSExtensionRequestHandling", "events"]
 - ["PSo26NSExtensionRequestHandling", "fillOutData"]
-- ["PSo26NSExtensionRequestHandling", "fillUpThatDataSon"]
+- ["PSo26NSExtensionRequestHandling", "fillUpThatData"]
 - ["PSo26NSExtensionRequestHandling", "getDirections"]
 - ["PSo26NSExtensionRequestHandling", "init"]
 - !private ["PSo26NSExtensionRequestHandling", "metersToMiles"]
@@ -766,7 +766,7 @@ depends-member:
 - ["CSo8NSObject", "eventWhere"]
 - ["CSo8NSObject", "events"]
 - ["CSo8NSObject", "fillOutData"]
-- ["CSo8NSObject", "fillUpThatDataSon"]
+- ["CSo8NSObject", "fillUpThatData"]
 - ["CSo8NSObject", "getDirections"]
 - !private ["CSo8NSObject", "identifier"]
 - ["CSo8NSObject", "information"]
@@ -833,7 +833,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "eventWhere"]
 - ["PSo16NSObjectProtocol", "events"]
 - ["PSo16NSObjectProtocol", "fillOutData"]
-- ["PSo16NSObjectProtocol", "fillUpThatDataSon"]
+- ["PSo16NSObjectProtocol", "fillUpThatData"]
 - ["PSo16NSObjectProtocol", "getDirections"]
 - !private ["PSo16NSObjectProtocol", "identifier"]
 - ["PSo16NSObjectProtocol", "information"]
@@ -954,7 +954,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "eventWhere"]
 - ["PSo21UIAppearanceContainer", "events"]
 - ["PSo21UIAppearanceContainer", "fillOutData"]
-- ["PSo21UIAppearanceContainer", "fillUpThatDataSon"]
+- ["PSo21UIAppearanceContainer", "fillUpThatData"]
 - ["PSo21UIAppearanceContainer", "getDirections"]
 - ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "metersToMiles"]
@@ -1000,7 +1000,7 @@ depends-member:
 - ["PSo18UIContentContainer", "eventWhere"]
 - ["PSo18UIContentContainer", "events"]
 - ["PSo18UIContentContainer", "fillOutData"]
-- ["PSo18UIContentContainer", "fillUpThatDataSon"]
+- ["PSo18UIContentContainer", "fillUpThatData"]
 - ["PSo18UIContentContainer", "getDirections"]
 - ["PSo18UIContentContainer", "init"]
 - !private ["PSo18UIContentContainer", "metersToMiles"]
@@ -1092,7 +1092,7 @@ depends-member:
 - ["CSo11UIResponder", "eventWhere"]
 - ["CSo11UIResponder", "events"]
 - ["CSo11UIResponder", "fillOutData"]
-- ["CSo11UIResponder", "fillUpThatDataSon"]
+- ["CSo11UIResponder", "fillUpThatData"]
 - ["CSo11UIResponder", "getDirections"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "metersToMiles"]
@@ -1133,7 +1133,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "currentLongitude"]
 - !private ["PSo20UIScrollViewDelegate", "eventCellIdentifier"]
 - !private ["PSo20UIScrollViewDelegate", "events"]
-- !private ["PSo20UIScrollViewDelegate", "fillUpThatDataSon"]
+- !private ["PSo20UIScrollViewDelegate", "fillUpThatData"]
 - !private ["PSo20UIScrollViewDelegate", "metersToMiles"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo20UIScrollViewDelegate", "performSegueWithIdentifier"]
@@ -1171,7 +1171,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "eventWhere"]
 - ["PSo16UIStateRestoring", "events"]
 - ["PSo16UIStateRestoring", "fillOutData"]
-- ["PSo16UIStateRestoring", "fillUpThatDataSon"]
+- ["PSo16UIStateRestoring", "fillUpThatData"]
 - ["PSo16UIStateRestoring", "getDirections"]
 - ["PSo16UIStateRestoring", "init"]
 - !private ["PSo16UIStateRestoring", "metersToMiles"]
@@ -1221,7 +1221,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "currentLongitude"]
 - !private ["PSo21UITableViewDataSource", "eventCellIdentifier"]
 - !private ["PSo21UITableViewDataSource", "events"]
-- !private ["PSo21UITableViewDataSource", "fillUpThatDataSon"]
+- !private ["PSo21UITableViewDataSource", "fillUpThatData"]
 - !private ["PSo21UITableViewDataSource", "metersToMiles"]
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
 - !private ["PSo21UITableViewDataSource", "performSegueWithIdentifier"]
@@ -1252,7 +1252,7 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "currentLongitude"]
 - !private ["PSo19UITableViewDelegate", "eventCellIdentifier"]
 - !private ["PSo19UITableViewDelegate", "events"]
-- !private ["PSo19UITableViewDelegate", "fillUpThatDataSon"]
+- !private ["PSo19UITableViewDelegate", "fillUpThatData"]
 - !private ["PSo19UITableViewDelegate", "metersToMiles"]
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo19UITableViewDelegate", "performSegueWithIdentifier"]
@@ -1299,7 +1299,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "eventWhere"]
 - ["PSo18UITraitEnvironment", "events"]
 - ["PSo18UITraitEnvironment", "fillOutData"]
-- ["PSo18UITraitEnvironment", "fillUpThatDataSon"]
+- ["PSo18UITraitEnvironment", "fillUpThatData"]
 - ["PSo18UITraitEnvironment", "getDirections"]
 - ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "metersToMiles"]
@@ -1369,7 +1369,7 @@ depends-member:
 - ["CSo16UIViewController", "eventWhere"]
 - ["CSo16UIViewController", "events"]
 - ["CSo16UIViewController", "fillOutData"]
-- ["CSo16UIViewController", "fillUpThatDataSon"]
+- ["CSo16UIViewController", "fillUpThatData"]
 - ["CSo16UIViewController", "getDirections"]
 - ["CSo16UIViewController", "init"]
 - !private ["CSo16UIViewController", "metersToMiles"]
@@ -1595,4 +1595,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "7f8387d204640b0dadd738fb27b36d9c"
+interface-hash: "99c994e7cef6b6375b057b944d146e5e"

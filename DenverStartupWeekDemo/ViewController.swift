@@ -29,20 +29,20 @@ class Event: NSObject {
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: IBOutlets
     @IBOutlet var tableView: UITableView!
-    // @IBOutlet var mapSnapshot: UIImageView!
-    // @IBOutlet var loadingSpinner: UIActivityIndicatorView!
     
+    // MARK: Vars
     private var events = [Event]()
     private var selectedEvent = Event()
     private let currentLatitude = 39.744700
     private let currentLongitude = -104.988707
     
+    
+    // MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fillUpThatDataSon()
-        // snapshotSomeMaps()
+        fillUpThatData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -52,7 +52,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    private func fillUpThatDataSon() {
+    // MARK: Private methods
+    private func fillUpThatData() { /* For demo purposes, grabbed data directly from http://www.denverstartupweek.org/schedule */
         
         createEventObject("What’s An Accessible App, And Why Does It Matter?",
             information: "In the U.S. alone, nearly 6.7 million people 16 and older are visually impaired — meaning, even with corrective lenses, they must use alternative methods to engage in activities that people with vision can do. Developing apps that are accessible means making it possible for those millions of blind and visually impaired people to do things like manage their health with iTriage and track sales leads via Salesforce the way sighted people do. \n\nIn this session, Denver-based experts Patrick Leonard, CTO of iTriage/Aetna Digital Products, and Mike Hess, Blind Institute of Technology founder and executive director, will do a little show-and-tell on what goes into developing apps that are accessible for the blind and visually impaired based on real apps that are in development. \n\nThey’ll also discuss the challenges they must overcome as a development team, and why making your apps accessible is a win for you as well as your users.",
@@ -66,7 +67,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             latitude: 39.744700,
             longitude: -104.988707)
         
-        createEventObject("Virtual Reality 101",
+        createEventObject("Virtual Reality 101\n",
             information: "One part philosophical, one part technical, this session will make you question what is real and yearn for more Virtual Reality in your life. \n\nA survey of the history of Virtual Reality will bring us from inception to the present day. It will be explained how, with mostly free and open source tools, beginning developers can create Virtual Reality content and experiences today.\n\nModern Virtual Reality systems, including those publicly available, and those only privately viewable will be reviewed in detail.\n\nA surprise national speaker guest, with actionable expertise in the Virtual Reality domain will join Mark Scheel for this session.\n\nAnother surprise opportunity will be more available to attendees of this session, but open to all of Denver Startup Week. Stay tuned for more.\n\nIs our reality real, or are we just ghosts in the machine? You won't want to miss this thought provoking discussion, multimedia content and technical lessons that this session will feature.\n\nMark Scheel is a local Android developer who has spoken at every Denver Startup Week. This year he will speak in cities around the world including Boston, Los Angeles, San Francisco, Dallas, Paris, Boulder and Denver. He loves to trail run and snowboard in the mountains when he isn't hacking away on various projects. You can follow him on Twitter at @5280mark.",
             date: "Monday September 28",
             time: "2PM - 3:30PM",
@@ -114,50 +115,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return objectLocation.distanceFromLocation(currentLocation) * metersToMiles
     }
     
-    /* Disabled
-    private func snapshotSomeMaps() {
-        let locationCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(currentLatitude), CLLocationDegrees(currentLongitude))
-        let region = MKCoordinateRegion(center: locationCoordinate, span: MKCoordinateSpanMake(0.055, 0.055))
-        
-        let snapshotOptions = MKMapSnapshotOptions()
-        snapshotOptions.region = region
-        snapshotOptions.scale = UIScreen.mainScreen().scale
-        snapshotOptions.size = mapSnapshot.frame.size
-        
-        let snapshotter = MKMapSnapshotter(options: snapshotOptions)
-        snapshotter.startWithCompletionHandler() { snapshot, error in
-            
-            let image = snapshot!.image
-            
-            let finalImageRect = CGRectMake(0, 0, image.size.width, image.size.height)
-            let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: "pinAnnotation")
-            let pinImage = pin.image
-            
-            UIGraphicsBeginImageContextWithOptions(image.size, true, image.scale);
-            
-            image.drawAtPoint(CGPointMake(0, 0))
-            
-            let homePoint = snapshot!.pointForCoordinate(locationCoordinate)
-            pinImage!.drawAtPoint(homePoint)
-            
-            var point = snapshot!.pointForCoordinate(locationCoordinate)
-            if (CGRectContainsPoint(finalImageRect, point)) {
-                point.x = point.x + pin.centerOffset.x - (pin.bounds.size.width/2)
-                point.y = point.y + pin.centerOffset.y - (pin.bounds.size.height/2)
-                pin.image!.drawAtPoint(point)
-            }
-            
-            let finalImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                self.mapSnapshot.image = finalImage
-                self.mapSnapshot.hidden = false
-                self.loadingSpinner.hidden = true
-            }
-        }
-    } */
     
+    // MARK: TableView Methods
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let eventCell = tableView.dequeueReusableCellWithIdentifier(eventCellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         let eventAtIndex = events[indexPath.row] as Event
@@ -167,7 +126,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // - Read things more semantically: Date/time/Address/etc.
         
         eventCell.eventLabel.text = eventAtIndex.title
-        eventCell.eventDateTime.text = "\(eventAtIndex.date) \(eventAtIndex.time)"
+        eventCell.eventDateTime.text = "\(eventAtIndex.date) \n\(eventAtIndex.time)"
         eventCell.eventAddress.text = eventAtIndex.address
         eventCell.eventCityStateZip.text = "\(eventAtIndex.city), \(eventAtIndex.state) \(eventAtIndex.zipcode)"
         eventCell.eventDistance.text = String(format: "%.2f miles from here", eventAtIndex.distance)
@@ -179,7 +138,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 160.0
+        return 180.0
     }
     
     internal func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -195,6 +154,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 class DetailViewController: UIViewController {
     
+    // MARK: IBOutlets/IBActions
     @IBOutlet var eventWhat: UILabel!
     @IBOutlet var eventWhen: UILabel!
     @IBOutlet var eventWhere: UILabel!
@@ -205,13 +165,16 @@ class DetailViewController: UIViewController {
         print("Get directions selected")
     }
     
+    // MARK: Vars
     internal var event = Event()
     
+    // MARK: Overriden methods
     override func viewDidLoad() {
         super.viewDidLoad()
         fillOutData()
     }
     
+    // MARK: Private methods
     private func fillOutData() {
         eventWhat.text = event.title
         eventWhen.text = "\(event.date) \n\(event.time)"
@@ -222,6 +185,8 @@ class DetailViewController: UIViewController {
 }
 
 final class EventTableViewCell: UITableViewCell {
+    
+    // MARK: IBOutlets
     @IBOutlet var eventLabel: UILabel!
     @IBOutlet var eventDateTime: UILabel!
     @IBOutlet var eventAddress: UILabel!
