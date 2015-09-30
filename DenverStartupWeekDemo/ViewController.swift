@@ -123,7 +123,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         eventCell.eventDateTime.text = "\(eventAtIndex.date) \n\(eventAtIndex.time)"
         eventCell.eventAddress.text = eventAtIndex.address
         eventCell.eventCityStateZip.text = "\(eventAtIndex.city), \(eventAtIndex.state) \(eventAtIndex.zipcode)"
-        eventCell.eventDistance.text = String(format: "%.2f miles from here", eventAtIndex.distance)
+        eventCell.eventDistance.text = String(format: "%.2f miles", eventAtIndex.distance)
         return eventCell
     }
 
