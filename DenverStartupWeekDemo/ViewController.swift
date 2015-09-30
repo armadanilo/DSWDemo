@@ -27,17 +27,16 @@ class Event: NSObject {
     var longitude: Double = 0.0
 }
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     // MARK: IBOutlets
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var collectionView: UICollectionView!
     
     // MARK: Vars
     private var events = [Event]()
     private var selectedEvent = Event()
     private let currentLatitude = 39.744700
     private let currentLongitude = -104.988707
-    
     
     // MARK: Override methods
     override func viewDidLoad() {
@@ -57,7 +56,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         createEventObject("What’s An Accessible App, And Why Does It Matter?",
             information: "In the U.S. alone, nearly 6.7 million people 16 and older are visually impaired — meaning, even with corrective lenses, they must use alternative methods to engage in activities that people with vision can do. Developing apps that are accessible means making it possible for those millions of blind and visually impaired people to do things like manage their health with iTriage and track sales leads via Salesforce the way sighted people do. \n\nIn this session, Denver-based experts Patrick Leonard, CTO of iTriage/Aetna Digital Products, and Mike Hess, Blind Institute of Technology founder and executive director, will do a little show-and-tell on what goes into developing apps that are accessible for the blind and visually impaired based on real apps that are in development. \n\nThey’ll also discuss the challenges they must overcome as a development team, and why making your apps accessible is a win for you as well as your users.",
-            date: "Thursday October 1",
+            date: "Thursday, October 1",
             time: "12PM - 1:30PM",
             address: "475 17th St., Ste. 200",
             city: "Denver",
@@ -67,9 +66,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             latitude: 39.744700,
             longitude: -104.988707)
         
-        createEventObject("Virtual Reality 101\n",
+        createEventObject("Virtual Reality 101",
             information: "One part philosophical, one part technical, this session will make you question what is real and yearn for more Virtual Reality in your life. \n\nA survey of the history of Virtual Reality will bring us from inception to the present day. It will be explained how, with mostly free and open source tools, beginning developers can create Virtual Reality content and experiences today.\n\nModern Virtual Reality systems, including those publicly available, and those only privately viewable will be reviewed in detail.\n\nA surprise national speaker guest, with actionable expertise in the Virtual Reality domain will join Mark Scheel for this session.\n\nAnother surprise opportunity will be more available to attendees of this session, but open to all of Denver Startup Week. Stay tuned for more.\n\nIs our reality real, or are we just ghosts in the machine? You won't want to miss this thought provoking discussion, multimedia content and technical lessons that this session will feature.\n\nMark Scheel is a local Android developer who has spoken at every Denver Startup Week. This year he will speak in cities around the world including Boston, Los Angeles, San Francisco, Dallas, Paris, Boulder and Denver. He loves to trail run and snowboard in the mountains when he isn't hacking away on various projects. You can follow him on Twitter at @5280mark.",
-            date: "Monday September 28",
+            date: "Monday, September 28",
             time: "2PM - 3:30PM",
             address: "1475 Lawrence Street, 5th Floor",
             city: "Denver",
@@ -81,7 +80,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         createEventObject("Design vs. Dev: It Doesn’t Have To Be This Way",
             information: "This panel will bridge both the Design Track and the Development Track. \n\nAnyone who has managed or worked on a team creating a digital product or website knows exactly what I’m talking about when I say design vs dev. It is like there is an unwritten rule that designers and developers should not like each other and it is their personal responsibility to make the others job as hard as possible. Why is this? \n\nIs it a difference in personalities? A problem of egos? A lack of rudimentary social skills? \n\nPerhaps. Or just maybe, designer and developers have never be offered an alternative and they are just following the path they believe their role is supposed to by living up to and projecting the stereotypes passed on to them. The individuals on this panel have all grappled at finding better ways for teams of designers and developers to work together more efficiently and more effectively. The panel will discuss how they have found success and what continues to trip them up today. Panelists include:\n\nBree Thomas, Developer at Mode Set, Co-Founder of The Aha Method and formerly Group Account Director at Factory Design Labs \n\nMario Rini, Digital Director at Strada Advertising, formerly Creative Director at io \n\nOlivia James, Marketing Program Manager at K2. \n\nBryan Lesniewski, UX Designer and Product Owner at TransUnion \n\nJason Hummel, Founder and Development Lead at Chalk \n\nJustin Gitlin, Director/Developer at Mode Set \n\nModerator:\nIan T. Nordeck, Creative Director and Consultant, former Creative Director at SpireMedia \n\nCoffee and light breakfast provided. \n\nHosted by: Ian T. Nordeck",
-            date: "Thursday October 1",
+            date: "Thursday, October 1",
             time: "10AM - 11:30AM",
             address: "3461 Ringsby Court #220",
             city: "Denver", state: "CO",
@@ -90,7 +89,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             latitude: 39.772329,
             longitude: -104.983799)
         
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     private func createEventObject(title: String, information: String, date: String, time: String, address: String, city: String, state: String, zipcode: String, distance: Double, latitude: Double, longitude: Double) {
@@ -115,15 +114,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return objectLocation.distanceFromLocation(currentLocation) * metersToMiles
     }
     
-    
-    // MARK: TableView Methods
-    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let eventCell = tableView.dequeueReusableCellWithIdentifier(eventCellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
+    // MARK: CollectionView methods
+    internal func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let eventCell = collectionView.dequeueReusableCellWithReuseIdentifier(eventCellIdentifier, forIndexPath: indexPath) as! EventCollectionViewCell
         let eventAtIndex = events[indexPath.row] as Event
-        
-        // TODO: Accessibility items:
-        // - Add context
-        // - Read things more semantically: Date/time/Address/etc.
         
         eventCell.eventLabel.text = eventAtIndex.title
         eventCell.eventDateTime.text = "\(eventAtIndex.date) \n\(eventAtIndex.time)"
@@ -132,20 +126,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         eventCell.eventDistance.text = String(format: "%.2f miles from here", eventAtIndex.distance)
         return eventCell
     }
-    
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
     
-    internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 180.0
-    }
-    
-    internal func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    internal func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    internal func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let eventAtIndex = events[indexPath.row] as Event
         selectedEvent = eventAtIndex
         performSegueWithIdentifier(segueIdentifier, sender: self)
@@ -184,7 +170,7 @@ class DetailViewController: UIViewController {
     }
 }
 
-final class EventTableViewCell: UITableViewCell {
+final class EventCollectionViewCell: UICollectionViewCell {
     
     // MARK: IBOutlets
     @IBOutlet var eventLabel: UILabel!
@@ -193,5 +179,4 @@ final class EventTableViewCell: UITableViewCell {
     @IBOutlet var eventCityStateZip: UILabel!
     @IBOutlet var eventDistance: UILabel!
 }
-
 

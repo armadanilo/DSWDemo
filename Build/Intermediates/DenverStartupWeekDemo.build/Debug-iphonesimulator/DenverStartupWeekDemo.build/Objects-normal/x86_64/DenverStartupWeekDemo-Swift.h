@@ -109,11 +109,28 @@ SWIFT_CLASS("_TtC21DenverStartupWeekDemo11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UICollectionView;
+@class UIStoryboardSegue;
+@class NSIndexPath;
+@class UICollectionViewCell;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC21DenverStartupWeekDemo24CollectionViewController")
+@interface CollectionViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic) IBOutlet UICollectionView * __null_unspecified collectionView;
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UILabel;
 @class UITextView;
 @class Event;
-@class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC21DenverStartupWeekDemo20DetailViewController")
 @interface DetailViewController : UIViewController
@@ -147,32 +164,14 @@ SWIFT_CLASS("_TtC21DenverStartupWeekDemo5Event")
 @end
 
 
-SWIFT_CLASS("_TtC21DenverStartupWeekDemo18EventTableViewCell")
-@interface EventTableViewCell : UITableViewCell
+SWIFT_CLASS("_TtC21DenverStartupWeekDemo23EventCollectionViewCell")
+@interface EventCollectionViewCell : UICollectionViewCell
 @property (nonatomic) IBOutlet UILabel * __null_unspecified eventLabel;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified eventDateTime;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified eventAddress;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified eventCityStateZip;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified eventDistance;
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UITableView;
-@class UIStoryboardSegue;
-@class NSIndexPath;
-
-SWIFT_CLASS("_TtC21DenverStartupWeekDemo18MainViewController")
-@interface MainViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic) IBOutlet UITableView * __null_unspecified tableView;
-- (void)viewDidLoad;
-- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
-- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
-- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (CGFloat)tableView:(UITableView * __nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
-- (CGFloat)tableView:(UITableView * __nonnull)tableView heightForHeaderInSection:(NSInteger)section;
-- (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
-- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

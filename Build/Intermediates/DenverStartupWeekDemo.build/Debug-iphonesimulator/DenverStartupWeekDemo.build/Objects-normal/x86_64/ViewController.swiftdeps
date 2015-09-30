@@ -1,84 +1,81 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "Event"
-- "MainViewController"
+- "CollectionViewController"
 - "DetailViewController"
-- "EventTableViewCell"
+- "EventCollectionViewCell"
 provides-nominal:
 - "C21DenverStartupWeekDemo5Event"
-- "C21DenverStartupWeekDemo18MainViewController"
+- "C21DenverStartupWeekDemo24CollectionViewController"
 - "C21DenverStartupWeekDemo20DetailViewController"
-- "C21DenverStartupWeekDemo18EventTableViewCell"
+- "C21DenverStartupWeekDemo23EventCollectionViewCell"
 provides-member:
 - ["C21DenverStartupWeekDemo5Event", ""]
-- ["C21DenverStartupWeekDemo18MainViewController", ""]
+- ["C21DenverStartupWeekDemo24CollectionViewController", ""]
 - ["C21DenverStartupWeekDemo20DetailViewController", ""]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", ""]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", ""]
 provides-dynamic-lookup:
-- "date"
-- "eventWhen"
-- "eventAddress"
-- "viewDidLoad"
-- "viewDidLoad"
-- "city"
-- "address"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "longitude"
-- "information"
 - "eventLabel"
 - "eventDescription"
-- "zipcode"
+- "title"
+- "distance"
+- "eventWhen"
 - "eventDistance"
+- "eventAddress"
+- "time"
 - "state"
 - "latitude"
-- "time"
+- "zipcode"
+- "numberOfAttendees"
+- "longitude"
+- "information"
+- "eventWhat"
+- "viewDidLoad"
+- "viewDidLoad"
 - "getDirections"
+- "eventDateTime"
+- "eventCityStateZip"
+- "address"
+- "city"
+- "event"
 - "prepareForSegue"
 - "eventWhere"
-- "event"
-- "eventWhat"
-- "eventCityStateZip"
-- "numberOfAttendees"
-- "distance"
-- "eventDateTime"
-- "title"
+- "date"
+- "collectionView"
+- "collectionView"
+- "collectionView"
+- "collectionView"
 depends-top-level:
-- "MainViewController"
-- !private "+"
 - "StringLiteralType"
-- "NSObject"
-- !private "*"
-- !private "UnicodeScalarType"
-- "Event"
-- !private "print"
-- "UITableView"
 - "UITextView"
-- "Int"
-- !private "metersToMiles"
-- "DetailViewController"
-- !private "eventCellIdentifier"
-- "UITableViewCell"
-- "UITableViewDataSource"
-- "EventTableViewCell"
-- !private "=="
-- "CGFloat"
-- "UIViewController"
-- "AnyObject"
-- "UITableViewDelegate"
-- "String"
-- !private "arc4random_uniform"
-- !private "CLLocation"
-- "UIStoryboardSegue"
-- "UILabel"
-- !private "CLLocationDegrees"
-- "NSIndexPath"
+- "NSObject"
 - "Double"
+- !private "print"
+- "EventCollectionViewCell"
+- "CollectionViewController"
+- "DetailViewController"
+- !private "*"
+- "String"
 - !private "segueIdentifier"
+- "UICollectionViewDataSource"
+- "AnyObject"
+- "UIViewController"
+- !private "=="
+- !private "+"
+- "Int"
+- "UICollectionViewCell"
+- "UILabel"
+- !private "metersToMiles"
+- !private "arc4random_uniform"
+- "UICollectionViewDelegate"
+- "UIStoryboardSegue"
+- "Event"
+- "UICollectionView"
+- "NSIndexPath"
+- !private "CLLocationDegrees"
+- !private "eventCellIdentifier"
+- !private "UnicodeScalarType"
+- !private "CLLocation"
 depends-member:
 - !private ["PSs9AnyObject", "CLLocation"]
 - ["PSs9AnyObject", "Event"]
@@ -87,11 +84,12 @@ depends-member:
 - !private ["PSs9AnyObject", "arc4random_uniform"]
 - ["PSs9AnyObject", "calculateDistanceFromCurrentUserLocation"]
 - ["PSs9AnyObject", "city"]
+- ["PSs9AnyObject", "collectionView"]
 - ["PSs9AnyObject", "createEventObject"]
 - ["PSs9AnyObject", "currentLatitude"]
 - ["PSs9AnyObject", "currentLongitude"]
 - ["PSs9AnyObject", "date"]
-- !private ["PSs9AnyObject", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs9AnyObject", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSs9AnyObject", "destinationViewController"]
 - ["PSs9AnyObject", "distance"]
 - !private ["PSs9AnyObject", "distanceFromLocation"]
@@ -117,7 +115,7 @@ depends-member:
 - ["PSs9AnyObject", "longitude"]
 - !private ["PSs9AnyObject", "metersToMiles"]
 - ["PSs9AnyObject", "numberOfAttendees"]
-- ["PSs9AnyObject", "numberOfSectionsInTableView"]
+- ["PSs9AnyObject", "numberOfSectionsInCollectionView"]
 - !private ["PSs9AnyObject", "performSegueWithIdentifier"]
 - ["PSs9AnyObject", "prepareForSegue"]
 - !private ["PSs9AnyObject", "print"]
@@ -135,11 +133,9 @@ depends-member:
 - ["PSs9AnyObject", "scrollViewWillBeginDragging"]
 - ["PSs9AnyObject", "scrollViewWillBeginZooming"]
 - ["PSs9AnyObject", "scrollViewWillEndDragging"]
-- ["PSs9AnyObject", "sectionIndexTitlesForTableView"]
 - !private ["PSs9AnyObject", "segueIdentifier"]
 - ["PSs9AnyObject", "selectedEvent"]
 - ["PSs9AnyObject", "state"]
-- ["PSs9AnyObject", "tableView"]
 - !private ["PSs9AnyObject", "text"]
 - ["PSs9AnyObject", "time"]
 - ["PSs9AnyObject", "title"]
@@ -174,7 +170,6 @@ depends-member:
 - !private ["Sb", "deinit"]
 - !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
-- !private ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["CSo10CLLocation", "distanceFromLocation"]
 - !private ["CSo10CLLocation", "init"]
 - !private ["PSs11CVarArgType", "CLLocation"]
@@ -186,11 +181,12 @@ depends-member:
 - !private ["PSs11CVarArgType", "arc4random_uniform"]
 - ["PSs11CVarArgType", "calculateDistanceFromCurrentUserLocation"]
 - ["PSs11CVarArgType", "city"]
+- ["PSs11CVarArgType", "collectionView"]
 - ["PSs11CVarArgType", "createEventObject"]
 - ["PSs11CVarArgType", "currentLatitude"]
 - ["PSs11CVarArgType", "currentLongitude"]
 - ["PSs11CVarArgType", "date"]
-- !private ["PSs11CVarArgType", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs11CVarArgType", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSs11CVarArgType", "destinationViewController"]
 - ["PSs11CVarArgType", "distance"]
 - !private ["PSs11CVarArgType", "distanceFromLocation"]
@@ -216,7 +212,7 @@ depends-member:
 - ["PSs11CVarArgType", "longitude"]
 - !private ["PSs11CVarArgType", "metersToMiles"]
 - ["PSs11CVarArgType", "numberOfAttendees"]
-- ["PSs11CVarArgType", "numberOfSectionsInTableView"]
+- ["PSs11CVarArgType", "numberOfSectionsInCollectionView"]
 - !private ["PSs11CVarArgType", "performSegueWithIdentifier"]
 - ["PSs11CVarArgType", "prepareForSegue"]
 - !private ["PSs11CVarArgType", "print"]
@@ -234,11 +230,9 @@ depends-member:
 - ["PSs11CVarArgType", "scrollViewWillBeginDragging"]
 - ["PSs11CVarArgType", "scrollViewWillBeginZooming"]
 - ["PSs11CVarArgType", "scrollViewWillEndDragging"]
-- ["PSs11CVarArgType", "sectionIndexTitlesForTableView"]
 - !private ["PSs11CVarArgType", "segueIdentifier"]
 - ["PSs11CVarArgType", "selectedEvent"]
 - ["PSs11CVarArgType", "state"]
-- ["PSs11CVarArgType", "tableView"]
 - !private ["PSs11CVarArgType", "text"]
 - ["PSs11CVarArgType", "time"]
 - ["PSs11CVarArgType", "title"]
@@ -255,6 +249,49 @@ depends-member:
 - !private ["PSs14CollectionType", "count"]
 - ["PSs14CollectionType", "init"]
 - !private ["PSs14CollectionType", "subscript"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "AnyObject"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "CLLocation"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "CLLocationDegrees"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "DetailViewController"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "Double"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "Event"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "EventCollectionViewCell"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "Int"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "NSIndexPath"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "String"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "UICollectionView"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "UICollectionViewCell"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "UIStoryboardSegue"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "calculateDistanceFromCurrentUserLocation"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "collectionView"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "createEventObject"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "currentLatitude"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "currentLongitude"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "deinit"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "eventCellIdentifier"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "events"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "fillUpThatData"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "init"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "metersToMiles"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "numberOfSectionsInCollectionView"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "performSegueWithIdentifier"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "prepareForSegue"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidEndDecelerating"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidEndDragging"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidEndScrollingAnimation"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidEndZooming"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidScroll"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidScrollToTop"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewDidZoom"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewShouldScrollToTop"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewWillBeginDecelerating"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewWillBeginDragging"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewWillBeginZooming"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "scrollViewWillEndDragging"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "segueIdentifier"]
+- !private ["C21DenverStartupWeekDemo24CollectionViewController", "selectedEvent"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "viewDidLoad"]
+- ["C21DenverStartupWeekDemo24CollectionViewController", "viewForZoomingInScrollView"]
 - !private ["PSs10Comparable", "Distance"]
 - !private ["PSs10Comparable", "IntegerLiteralType"]
 - !private ["PSs10Comparable", "init"]
@@ -281,12 +318,13 @@ depends-member:
 - !private ["PSs23CustomStringConvertible", "arc4random_uniform"]
 - ["PSs23CustomStringConvertible", "calculateDistanceFromCurrentUserLocation"]
 - ["PSs23CustomStringConvertible", "city"]
+- ["PSs23CustomStringConvertible", "collectionView"]
 - !private ["PSs23CustomStringConvertible", "count"]
 - ["PSs23CustomStringConvertible", "createEventObject"]
 - ["PSs23CustomStringConvertible", "currentLatitude"]
 - ["PSs23CustomStringConvertible", "currentLongitude"]
 - ["PSs23CustomStringConvertible", "date"]
-- !private ["PSs23CustomStringConvertible", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs23CustomStringConvertible", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSs23CustomStringConvertible", "destinationViewController"]
 - ["PSs23CustomStringConvertible", "distance"]
 - !private ["PSs23CustomStringConvertible", "distanceFromLocation"]
@@ -312,7 +350,7 @@ depends-member:
 - ["PSs23CustomStringConvertible", "longitude"]
 - !private ["PSs23CustomStringConvertible", "metersToMiles"]
 - ["PSs23CustomStringConvertible", "numberOfAttendees"]
-- ["PSs23CustomStringConvertible", "numberOfSectionsInTableView"]
+- ["PSs23CustomStringConvertible", "numberOfSectionsInCollectionView"]
 - !private ["PSs23CustomStringConvertible", "performSegueWithIdentifier"]
 - ["PSs23CustomStringConvertible", "prepareForSegue"]
 - !private ["PSs23CustomStringConvertible", "print"]
@@ -330,12 +368,10 @@ depends-member:
 - ["PSs23CustomStringConvertible", "scrollViewWillBeginDragging"]
 - ["PSs23CustomStringConvertible", "scrollViewWillBeginZooming"]
 - ["PSs23CustomStringConvertible", "scrollViewWillEndDragging"]
-- ["PSs23CustomStringConvertible", "sectionIndexTitlesForTableView"]
 - !private ["PSs23CustomStringConvertible", "segueIdentifier"]
 - ["PSs23CustomStringConvertible", "selectedEvent"]
 - ["PSs23CustomStringConvertible", "state"]
 - !private ["PSs23CustomStringConvertible", "subscript"]
-- ["PSs23CustomStringConvertible", "tableView"]
 - !private ["PSs23CustomStringConvertible", "text"]
 - ["PSs23CustomStringConvertible", "time"]
 - ["PSs23CustomStringConvertible", "title"]
@@ -370,11 +406,12 @@ depends-member:
 - !private ["PSs9Equatable", "arc4random_uniform"]
 - ["PSs9Equatable", "calculateDistanceFromCurrentUserLocation"]
 - ["PSs9Equatable", "city"]
+- ["PSs9Equatable", "collectionView"]
 - ["PSs9Equatable", "createEventObject"]
 - ["PSs9Equatable", "currentLatitude"]
 - ["PSs9Equatable", "currentLongitude"]
 - ["PSs9Equatable", "date"]
-- !private ["PSs9Equatable", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs9Equatable", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSs9Equatable", "destinationViewController"]
 - ["PSs9Equatable", "distance"]
 - !private ["PSs9Equatable", "distanceFromLocation"]
@@ -400,7 +437,7 @@ depends-member:
 - ["PSs9Equatable", "longitude"]
 - !private ["PSs9Equatable", "metersToMiles"]
 - ["PSs9Equatable", "numberOfAttendees"]
-- ["PSs9Equatable", "numberOfSectionsInTableView"]
+- ["PSs9Equatable", "numberOfSectionsInCollectionView"]
 - !private ["PSs9Equatable", "performSegueWithIdentifier"]
 - ["PSs9Equatable", "prepareForSegue"]
 - !private ["PSs9Equatable", "print"]
@@ -418,11 +455,9 @@ depends-member:
 - ["PSs9Equatable", "scrollViewWillBeginDragging"]
 - ["PSs9Equatable", "scrollViewWillBeginZooming"]
 - ["PSs9Equatable", "scrollViewWillEndDragging"]
-- ["PSs9Equatable", "sectionIndexTitlesForTableView"]
 - !private ["PSs9Equatable", "segueIdentifier"]
 - ["PSs9Equatable", "selectedEvent"]
 - ["PSs9Equatable", "state"]
-- ["PSs9Equatable", "tableView"]
 - !private ["PSs9Equatable", "text"]
 - ["PSs9Equatable", "time"]
 - ["PSs9Equatable", "title"]
@@ -445,14 +480,14 @@ depends-member:
 - ["C21DenverStartupWeekDemo5Event", "time"]
 - ["C21DenverStartupWeekDemo5Event", "title"]
 - ["C21DenverStartupWeekDemo5Event", "zipcode"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "UILabel"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "deinit"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "eventAddress"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "eventCityStateZip"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "eventDateTime"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "eventDistance"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "eventLabel"]
-- ["C21DenverStartupWeekDemo18EventTableViewCell", "init"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "UILabel"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "deinit"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "eventAddress"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "eventCityStateZip"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "eventDateTime"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "eventDistance"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "eventLabel"]
+- ["C21DenverStartupWeekDemo23EventCollectionViewCell", "init"]
 - !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Sf", "deinit"]
 - !private ["PSs16ForwardIndexType", "Distance"]
@@ -468,11 +503,12 @@ depends-member:
 - !private ["PSs8Hashable", "arc4random_uniform"]
 - ["PSs8Hashable", "calculateDistanceFromCurrentUserLocation"]
 - ["PSs8Hashable", "city"]
+- ["PSs8Hashable", "collectionView"]
 - ["PSs8Hashable", "createEventObject"]
 - ["PSs8Hashable", "currentLatitude"]
 - ["PSs8Hashable", "currentLongitude"]
 - ["PSs8Hashable", "date"]
-- !private ["PSs8Hashable", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs8Hashable", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSs8Hashable", "destinationViewController"]
 - ["PSs8Hashable", "distance"]
 - !private ["PSs8Hashable", "distanceFromLocation"]
@@ -498,7 +534,7 @@ depends-member:
 - ["PSs8Hashable", "longitude"]
 - !private ["PSs8Hashable", "metersToMiles"]
 - ["PSs8Hashable", "numberOfAttendees"]
-- ["PSs8Hashable", "numberOfSectionsInTableView"]
+- ["PSs8Hashable", "numberOfSectionsInCollectionView"]
 - !private ["PSs8Hashable", "performSegueWithIdentifier"]
 - ["PSs8Hashable", "prepareForSegue"]
 - !private ["PSs8Hashable", "print"]
@@ -516,11 +552,9 @@ depends-member:
 - ["PSs8Hashable", "scrollViewWillBeginDragging"]
 - ["PSs8Hashable", "scrollViewWillBeginZooming"]
 - ["PSs8Hashable", "scrollViewWillEndDragging"]
-- ["PSs8Hashable", "sectionIndexTitlesForTableView"]
 - !private ["PSs8Hashable", "segueIdentifier"]
 - ["PSs8Hashable", "selectedEvent"]
 - ["PSs8Hashable", "state"]
-- ["PSs8Hashable", "tableView"]
 - !private ["PSs8Hashable", "text"]
 - ["PSs8Hashable", "time"]
 - ["PSs8Hashable", "title"]
@@ -550,51 +584,6 @@ depends-member:
 - !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
 - !private ["PSs11IntegerType", "Distance"]
 - !private ["PSs11IntegerType", "IntegerLiteralType"]
-- ["C21DenverStartupWeekDemo18MainViewController", "AnyObject"]
-- ["C21DenverStartupWeekDemo18MainViewController", "CGFloat"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "CLLocation"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "CLLocationDegrees"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "DetailViewController"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "Double"]
-- ["C21DenverStartupWeekDemo18MainViewController", "Event"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "EventTableViewCell"]
-- ["C21DenverStartupWeekDemo18MainViewController", "Int"]
-- ["C21DenverStartupWeekDemo18MainViewController", "NSIndexPath"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "String"]
-- ["C21DenverStartupWeekDemo18MainViewController", "UIStoryboardSegue"]
-- ["C21DenverStartupWeekDemo18MainViewController", "UITableView"]
-- ["C21DenverStartupWeekDemo18MainViewController", "UITableViewCell"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "calculateDistanceFromCurrentUserLocation"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "createEventObject"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "currentLatitude"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "currentLongitude"]
-- ["C21DenverStartupWeekDemo18MainViewController", "deinit"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "eventCellIdentifier"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "events"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "fillUpThatData"]
-- ["C21DenverStartupWeekDemo18MainViewController", "init"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "metersToMiles"]
-- ["C21DenverStartupWeekDemo18MainViewController", "numberOfSectionsInTableView"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "performSegueWithIdentifier"]
-- ["C21DenverStartupWeekDemo18MainViewController", "prepareForSegue"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidEndDecelerating"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidEndDragging"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidEndScrollingAnimation"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidEndZooming"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidScroll"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidScrollToTop"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewDidZoom"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewShouldScrollToTop"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewWillBeginDecelerating"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewWillBeginDragging"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewWillBeginZooming"]
-- ["C21DenverStartupWeekDemo18MainViewController", "scrollViewWillEndDragging"]
-- ["C21DenverStartupWeekDemo18MainViewController", "sectionIndexTitlesForTableView"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "segueIdentifier"]
-- !private ["C21DenverStartupWeekDemo18MainViewController", "selectedEvent"]
-- ["C21DenverStartupWeekDemo18MainViewController", "tableView"]
-- ["C21DenverStartupWeekDemo18MainViewController", "viewDidLoad"]
-- ["C21DenverStartupWeekDemo18MainViewController", "viewForZoomingInScrollView"]
 - !private ["PSs14MirrorPathType", "Distance"]
 - !private ["PSs14MirrorPathType", "IntegerLiteralType"]
 - !private ["PSs14MirrorPathType", "init"]
@@ -627,10 +616,11 @@ depends-member:
 - !private ["PSo8NSCoding", "String"]
 - !private ["PSo8NSCoding", "arc4random_uniform"]
 - ["PSo8NSCoding", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo8NSCoding", "collectionView"]
 - ["PSo8NSCoding", "createEventObject"]
 - ["PSo8NSCoding", "currentLatitude"]
 - ["PSo8NSCoding", "currentLongitude"]
-- !private ["PSo8NSCoding", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo8NSCoding", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSo8NSCoding", "distanceFromLocation"]
 - ["PSo8NSCoding", "event"]
 - ["PSo8NSCoding", "eventAddress"]
@@ -650,7 +640,7 @@ depends-member:
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "metersToMiles"]
 - ["PSo8NSCoding", "numberOfAttendees"]
-- ["PSo8NSCoding", "numberOfSectionsInTableView"]
+- ["PSo8NSCoding", "numberOfSectionsInCollectionView"]
 - !private ["PSo8NSCoding", "performSegueWithIdentifier"]
 - ["PSo8NSCoding", "prepareForSegue"]
 - !private ["PSo8NSCoding", "print"]
@@ -668,10 +658,8 @@ depends-member:
 - ["PSo8NSCoding", "scrollViewWillBeginDragging"]
 - ["PSo8NSCoding", "scrollViewWillBeginZooming"]
 - ["PSo8NSCoding", "scrollViewWillEndDragging"]
-- ["PSo8NSCoding", "sectionIndexTitlesForTableView"]
 - !private ["PSo8NSCoding", "segueIdentifier"]
 - ["PSo8NSCoding", "selectedEvent"]
-- ["PSo8NSCoding", "tableView"]
 - !private ["PSo8NSCoding", "text"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", "viewForZoomingInScrollView"]
@@ -684,6 +672,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "String"]
 - !private ["PSo26NSExtensionRequestHandling", "arc4random_uniform"]
 - ["PSo26NSExtensionRequestHandling", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo26NSExtensionRequestHandling", "collectionView"]
 - ["PSo26NSExtensionRequestHandling", "createEventObject"]
 - ["PSo26NSExtensionRequestHandling", "currentLatitude"]
 - ["PSo26NSExtensionRequestHandling", "currentLongitude"]
@@ -700,7 +689,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "init"]
 - !private ["PSo26NSExtensionRequestHandling", "metersToMiles"]
 - ["PSo26NSExtensionRequestHandling", "numberOfAttendees"]
-- ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
+- ["PSo26NSExtensionRequestHandling", "numberOfSectionsInCollectionView"]
 - !private ["PSo26NSExtensionRequestHandling", "performSegueWithIdentifier"]
 - ["PSo26NSExtensionRequestHandling", "prepareForSegue"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
@@ -716,40 +705,38 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "scrollViewWillBeginDragging"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewWillBeginZooming"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewWillEndDragging"]
-- ["PSo26NSExtensionRequestHandling", "sectionIndexTitlesForTableView"]
 - !private ["PSo26NSExtensionRequestHandling", "segueIdentifier"]
 - ["PSo26NSExtensionRequestHandling", "selectedEvent"]
-- ["PSo26NSExtensionRequestHandling", "tableView"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", "viewForZoomingInScrollView"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["CSo11NSIndexPath", "row"]
 - !private ["PSo16NSMutableCopying", "init"]
 - ["CSo8NSObject", "AnyObject"]
-- ["CSo8NSObject", "CGFloat"]
 - !private ["CSo8NSObject", "CLLocation"]
 - !private ["CSo8NSObject", "CLLocationDegrees"]
 - !private ["CSo8NSObject", "DetailViewController"]
 - ["CSo8NSObject", "Double"]
 - ["CSo8NSObject", "Event"]
-- !private ["CSo8NSObject", "EventTableViewCell"]
+- !private ["CSo8NSObject", "EventCollectionViewCell"]
 - ["CSo8NSObject", "Int"]
 - ["CSo8NSObject", "NSIndexPath"]
 - ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UICollectionView"]
+- ["CSo8NSObject", "UICollectionViewCell"]
 - ["CSo8NSObject", "UILabel"]
 - ["CSo8NSObject", "UIStoryboardSegue"]
-- ["CSo8NSObject", "UITableView"]
-- ["CSo8NSObject", "UITableViewCell"]
 - ["CSo8NSObject", "UITextView"]
 - ["CSo8NSObject", "address"]
 - !private ["CSo8NSObject", "arc4random_uniform"]
 - ["CSo8NSObject", "calculateDistanceFromCurrentUserLocation"]
 - ["CSo8NSObject", "city"]
+- ["CSo8NSObject", "collectionView"]
 - ["CSo8NSObject", "createEventObject"]
 - ["CSo8NSObject", "currentLatitude"]
 - ["CSo8NSObject", "currentLongitude"]
 - ["CSo8NSObject", "date"]
-- !private ["CSo8NSObject", "dequeueReusableCellWithIdentifier"]
+- !private ["CSo8NSObject", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["CSo8NSObject", "destinationViewController"]
 - ["CSo8NSObject", "distance"]
 - !private ["CSo8NSObject", "distanceFromLocation"]
@@ -775,7 +762,7 @@ depends-member:
 - ["CSo8NSObject", "longitude"]
 - !private ["CSo8NSObject", "metersToMiles"]
 - ["CSo8NSObject", "numberOfAttendees"]
-- ["CSo8NSObject", "numberOfSectionsInTableView"]
+- ["CSo8NSObject", "numberOfSectionsInCollectionView"]
 - !private ["CSo8NSObject", "performSegueWithIdentifier"]
 - ["CSo8NSObject", "prepareForSegue"]
 - !private ["CSo8NSObject", "print"]
@@ -793,11 +780,9 @@ depends-member:
 - ["CSo8NSObject", "scrollViewWillBeginDragging"]
 - ["CSo8NSObject", "scrollViewWillBeginZooming"]
 - ["CSo8NSObject", "scrollViewWillEndDragging"]
-- ["CSo8NSObject", "sectionIndexTitlesForTableView"]
 - !private ["CSo8NSObject", "segueIdentifier"]
 - ["CSo8NSObject", "selectedEvent"]
 - ["CSo8NSObject", "state"]
-- ["CSo8NSObject", "tableView"]
 - !private ["CSo8NSObject", "text"]
 - ["CSo8NSObject", "time"]
 - ["CSo8NSObject", "title"]
@@ -812,11 +797,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "arc4random_uniform"]
 - ["PSo16NSObjectProtocol", "calculateDistanceFromCurrentUserLocation"]
 - ["PSo16NSObjectProtocol", "city"]
+- ["PSo16NSObjectProtocol", "collectionView"]
 - ["PSo16NSObjectProtocol", "createEventObject"]
 - ["PSo16NSObjectProtocol", "currentLatitude"]
 - ["PSo16NSObjectProtocol", "currentLongitude"]
 - ["PSo16NSObjectProtocol", "date"]
-- !private ["PSo16NSObjectProtocol", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo16NSObjectProtocol", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["PSo16NSObjectProtocol", "destinationViewController"]
 - ["PSo16NSObjectProtocol", "distance"]
 - !private ["PSo16NSObjectProtocol", "distanceFromLocation"]
@@ -842,7 +828,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "longitude"]
 - !private ["PSo16NSObjectProtocol", "metersToMiles"]
 - ["PSo16NSObjectProtocol", "numberOfAttendees"]
-- ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
+- ["PSo16NSObjectProtocol", "numberOfSectionsInCollectionView"]
 - !private ["PSo16NSObjectProtocol", "performSegueWithIdentifier"]
 - ["PSo16NSObjectProtocol", "prepareForSegue"]
 - !private ["PSo16NSObjectProtocol", "print"]
@@ -860,11 +846,9 @@ depends-member:
 - ["PSo16NSObjectProtocol", "scrollViewWillBeginDragging"]
 - ["PSo16NSObjectProtocol", "scrollViewWillBeginZooming"]
 - ["PSo16NSObjectProtocol", "scrollViewWillEndDragging"]
-- ["PSo16NSObjectProtocol", "sectionIndexTitlesForTableView"]
 - !private ["PSo16NSObjectProtocol", "segueIdentifier"]
 - ["PSo16NSObjectProtocol", "selectedEvent"]
 - ["PSo16NSObjectProtocol", "state"]
-- ["PSo16NSObjectProtocol", "tableView"]
 - !private ["PSo16NSObjectProtocol", "text"]
 - ["PSo16NSObjectProtocol", "time"]
 - ["PSo16NSObjectProtocol", "title"]
@@ -912,7 +896,7 @@ depends-member:
 - !private ["SS", "init"]
 - !private ["PSs30StringInterpolationConvertible", "init"]
 - !private ["PSs24StringLiteralConvertible", "init"]
-- !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo29UIAccessibilityIdentification", "eventAddress"]
 - ["PSo29UIAccessibilityIdentification", "eventCityStateZip"]
 - ["PSo29UIAccessibilityIdentification", "eventDateTime"]
@@ -922,7 +906,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "reloadData"]
 - !private ["PSo29UIAccessibilityIdentification", "text"]
 - ["PSo29UIAccessibilityIdentification", ""]
-- !private ["PSo12UIAppearance", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo12UIAppearance", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo12UIAppearance", "eventAddress"]
 - ["PSo12UIAppearance", "eventCityStateZip"]
 - ["PSo12UIAppearance", "eventDateTime"]
@@ -937,10 +921,11 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "String"]
 - !private ["PSo21UIAppearanceContainer", "arc4random_uniform"]
 - ["PSo21UIAppearanceContainer", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo21UIAppearanceContainer", "collectionView"]
 - ["PSo21UIAppearanceContainer", "createEventObject"]
 - ["PSo21UIAppearanceContainer", "currentLatitude"]
 - ["PSo21UIAppearanceContainer", "currentLongitude"]
-- !private ["PSo21UIAppearanceContainer", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo21UIAppearanceContainer", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo21UIAppearanceContainer", "event"]
 - ["PSo21UIAppearanceContainer", "eventAddress"]
 - !private ["PSo21UIAppearanceContainer", "eventCellIdentifier"]
@@ -959,7 +944,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "metersToMiles"]
 - ["PSo21UIAppearanceContainer", "numberOfAttendees"]
-- ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
+- ["PSo21UIAppearanceContainer", "numberOfSectionsInCollectionView"]
 - !private ["PSo21UIAppearanceContainer", "performSegueWithIdentifier"]
 - ["PSo21UIAppearanceContainer", "prepareForSegue"]
 - !private ["PSo21UIAppearanceContainer", "print"]
@@ -976,19 +961,96 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "scrollViewWillBeginDragging"]
 - ["PSo21UIAppearanceContainer", "scrollViewWillBeginZooming"]
 - ["PSo21UIAppearanceContainer", "scrollViewWillEndDragging"]
-- ["PSo21UIAppearanceContainer", "sectionIndexTitlesForTableView"]
 - !private ["PSo21UIAppearanceContainer", "segueIdentifier"]
 - ["PSo21UIAppearanceContainer", "selectedEvent"]
-- ["PSo21UIAppearanceContainer", "tableView"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", "viewForZoomingInScrollView"]
 - ["PSo21UIAppearanceContainer", ""]
+- ["CSo24UICollectionReusableView", "UILabel"]
+- ["CSo24UICollectionReusableView", "eventAddress"]
+- ["CSo24UICollectionReusableView", "eventCityStateZip"]
+- ["CSo24UICollectionReusableView", "eventDateTime"]
+- ["CSo24UICollectionReusableView", "eventDistance"]
+- ["CSo24UICollectionReusableView", "eventLabel"]
+- ["CSo24UICollectionReusableView", "init"]
+- !private ["CSo16UICollectionView", "dequeueReusableCellWithReuseIdentifier"]
+- !private ["CSo16UICollectionView", "reloadData"]
+- ["CSo20UICollectionViewCell", "UILabel"]
+- !private ["CSo20UICollectionViewCell", "deinit"]
+- ["CSo20UICollectionViewCell", "eventAddress"]
+- ["CSo20UICollectionViewCell", "eventCityStateZip"]
+- ["CSo20UICollectionViewCell", "eventDateTime"]
+- ["CSo20UICollectionViewCell", "eventDistance"]
+- ["CSo20UICollectionViewCell", "eventLabel"]
+- ["CSo20UICollectionViewCell", "init"]
+- ["CSo20UICollectionViewCell", ""]
+- !private ["PSo26UICollectionViewDataSource", "CLLocation"]
+- ["PSo26UICollectionViewDataSource", "Event"]
+- !private ["PSo26UICollectionViewDataSource", "String"]
+- !private ["PSo26UICollectionViewDataSource", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo26UICollectionViewDataSource", "collectionView"]
+- !private ["PSo26UICollectionViewDataSource", "createEventObject"]
+- !private ["PSo26UICollectionViewDataSource", "currentLatitude"]
+- !private ["PSo26UICollectionViewDataSource", "currentLongitude"]
+- !private ["PSo26UICollectionViewDataSource", "eventCellIdentifier"]
+- !private ["PSo26UICollectionViewDataSource", "events"]
+- !private ["PSo26UICollectionViewDataSource", "fillUpThatData"]
+- !private ["PSo26UICollectionViewDataSource", "metersToMiles"]
+- ["PSo26UICollectionViewDataSource", "numberOfSectionsInCollectionView"]
+- !private ["PSo26UICollectionViewDataSource", "performSegueWithIdentifier"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidEndDecelerating"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidEndDragging"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidEndScrollingAnimation"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidEndZooming"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidScroll"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidScrollToTop"]
+- ["PSo26UICollectionViewDataSource", "scrollViewDidZoom"]
+- ["PSo26UICollectionViewDataSource", "scrollViewShouldScrollToTop"]
+- ["PSo26UICollectionViewDataSource", "scrollViewWillBeginDecelerating"]
+- ["PSo26UICollectionViewDataSource", "scrollViewWillBeginDragging"]
+- ["PSo26UICollectionViewDataSource", "scrollViewWillBeginZooming"]
+- ["PSo26UICollectionViewDataSource", "scrollViewWillEndDragging"]
+- !private ["PSo26UICollectionViewDataSource", "segueIdentifier"]
+- !private ["PSo26UICollectionViewDataSource", "selectedEvent"]
+- ["PSo26UICollectionViewDataSource", "viewForZoomingInScrollView"]
+- ["PSo26UICollectionViewDataSource", ""]
+- !private ["PSo24UICollectionViewDelegate", "CLLocation"]
+- ["PSo24UICollectionViewDelegate", "Event"]
+- !private ["PSo24UICollectionViewDelegate", "String"]
+- !private ["PSo24UICollectionViewDelegate", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo24UICollectionViewDelegate", "collectionView"]
+- !private ["PSo24UICollectionViewDelegate", "createEventObject"]
+- !private ["PSo24UICollectionViewDelegate", "currentLatitude"]
+- !private ["PSo24UICollectionViewDelegate", "currentLongitude"]
+- !private ["PSo24UICollectionViewDelegate", "eventCellIdentifier"]
+- !private ["PSo24UICollectionViewDelegate", "events"]
+- !private ["PSo24UICollectionViewDelegate", "fillUpThatData"]
+- !private ["PSo24UICollectionViewDelegate", "metersToMiles"]
+- ["PSo24UICollectionViewDelegate", "numberOfSectionsInCollectionView"]
+- !private ["PSo24UICollectionViewDelegate", "performSegueWithIdentifier"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidEndDecelerating"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidEndDragging"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidEndScrollingAnimation"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidEndZooming"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidScroll"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidScrollToTop"]
+- ["PSo24UICollectionViewDelegate", "scrollViewDidZoom"]
+- ["PSo24UICollectionViewDelegate", "scrollViewShouldScrollToTop"]
+- ["PSo24UICollectionViewDelegate", "scrollViewWillBeginDecelerating"]
+- ["PSo24UICollectionViewDelegate", "scrollViewWillBeginDragging"]
+- ["PSo24UICollectionViewDelegate", "scrollViewWillBeginZooming"]
+- ["PSo24UICollectionViewDelegate", "scrollViewWillEndDragging"]
+- !private ["PSo24UICollectionViewDelegate", "segueIdentifier"]
+- !private ["PSo24UICollectionViewDelegate", "selectedEvent"]
+- ["PSo24UICollectionViewDelegate", "viewForZoomingInScrollView"]
+- ["PSo24UICollectionViewDelegate", ""]
 - !private ["PSo18UIContentContainer", "CLLocation"]
 - ["PSo18UIContentContainer", "Event"]
 - !private ["PSo18UIContentContainer", "String"]
 - !private ["PSo18UIContentContainer", "arc4random_uniform"]
 - ["PSo18UIContentContainer", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo18UIContentContainer", "collectionView"]
 - ["PSo18UIContentContainer", "createEventObject"]
 - ["PSo18UIContentContainer", "currentLatitude"]
 - ["PSo18UIContentContainer", "currentLongitude"]
@@ -1005,7 +1067,7 @@ depends-member:
 - ["PSo18UIContentContainer", "init"]
 - !private ["PSo18UIContentContainer", "metersToMiles"]
 - ["PSo18UIContentContainer", "numberOfAttendees"]
-- ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
+- ["PSo18UIContentContainer", "numberOfSectionsInCollectionView"]
 - !private ["PSo18UIContentContainer", "performSegueWithIdentifier"]
 - ["PSo18UIContentContainer", "prepareForSegue"]
 - !private ["PSo18UIContentContainer", "print"]
@@ -1021,14 +1083,12 @@ depends-member:
 - ["PSo18UIContentContainer", "scrollViewWillBeginDragging"]
 - ["PSo18UIContentContainer", "scrollViewWillBeginZooming"]
 - ["PSo18UIContentContainer", "scrollViewWillEndDragging"]
-- ["PSo18UIContentContainer", "sectionIndexTitlesForTableView"]
 - !private ["PSo18UIContentContainer", "segueIdentifier"]
 - ["PSo18UIContentContainer", "selectedEvent"]
-- ["PSo18UIContentContainer", "tableView"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", "viewForZoomingInScrollView"]
 - ["PSo18UIContentContainer", ""]
-- !private ["PSo17UICoordinateSpace", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo17UICoordinateSpace", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo17UICoordinateSpace", "eventAddress"]
 - ["PSo17UICoordinateSpace", "eventCityStateZip"]
 - ["PSo17UICoordinateSpace", "eventDateTime"]
@@ -1038,7 +1098,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "reloadData"]
 - !private ["PSo17UICoordinateSpace", "text"]
 - ["PSo17UICoordinateSpace", ""]
-- !private ["PSo13UIDynamicItem", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo13UIDynamicItem", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo13UIDynamicItem", "eventAddress"]
 - ["PSo13UIDynamicItem", "eventCityStateZip"]
 - ["PSo13UIDynamicItem", "eventDateTime"]
@@ -1048,37 +1108,30 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "reloadData"]
 - !private ["PSo13UIDynamicItem", "text"]
 - ["PSo13UIDynamicItem", ""]
-- ["PSo27UIGestureRecognizerDelegate", "eventAddress"]
-- ["PSo27UIGestureRecognizerDelegate", "eventCityStateZip"]
-- ["PSo27UIGestureRecognizerDelegate", "eventDateTime"]
-- ["PSo27UIGestureRecognizerDelegate", "eventDistance"]
-- ["PSo27UIGestureRecognizerDelegate", "eventLabel"]
-- ["PSo27UIGestureRecognizerDelegate", "init"]
-- ["PSo27UIGestureRecognizerDelegate", ""]
 - !private ["PSo10UIKeyInput", "text"]
 - !private ["CSo7UILabel", "text"]
 - ["CSo11UIResponder", "AnyObject"]
-- ["CSo11UIResponder", "CGFloat"]
 - !private ["CSo11UIResponder", "CLLocation"]
 - !private ["CSo11UIResponder", "CLLocationDegrees"]
 - !private ["CSo11UIResponder", "DetailViewController"]
 - !private ["CSo11UIResponder", "Double"]
 - ["CSo11UIResponder", "Event"]
-- !private ["CSo11UIResponder", "EventTableViewCell"]
+- !private ["CSo11UIResponder", "EventCollectionViewCell"]
 - ["CSo11UIResponder", "Int"]
 - ["CSo11UIResponder", "NSIndexPath"]
 - !private ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UICollectionView"]
+- ["CSo11UIResponder", "UICollectionViewCell"]
 - ["CSo11UIResponder", "UILabel"]
 - ["CSo11UIResponder", "UIStoryboardSegue"]
-- ["CSo11UIResponder", "UITableView"]
-- ["CSo11UIResponder", "UITableViewCell"]
 - ["CSo11UIResponder", "UITextView"]
 - !private ["CSo11UIResponder", "arc4random_uniform"]
 - ["CSo11UIResponder", "calculateDistanceFromCurrentUserLocation"]
+- ["CSo11UIResponder", "collectionView"]
 - ["CSo11UIResponder", "createEventObject"]
 - ["CSo11UIResponder", "currentLatitude"]
 - ["CSo11UIResponder", "currentLongitude"]
-- !private ["CSo11UIResponder", "dequeueReusableCellWithIdentifier"]
+- !private ["CSo11UIResponder", "dequeueReusableCellWithReuseIdentifier"]
 - ["CSo11UIResponder", "event"]
 - ["CSo11UIResponder", "eventAddress"]
 - !private ["CSo11UIResponder", "eventCellIdentifier"]
@@ -1097,7 +1150,7 @@ depends-member:
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "metersToMiles"]
 - ["CSo11UIResponder", "numberOfAttendees"]
-- ["CSo11UIResponder", "numberOfSectionsInTableView"]
+- ["CSo11UIResponder", "numberOfSectionsInCollectionView"]
 - !private ["CSo11UIResponder", "performSegueWithIdentifier"]
 - ["CSo11UIResponder", "prepareForSegue"]
 - !private ["CSo11UIResponder", "print"]
@@ -1114,20 +1167,19 @@ depends-member:
 - ["CSo11UIResponder", "scrollViewWillBeginDragging"]
 - ["CSo11UIResponder", "scrollViewWillBeginZooming"]
 - ["CSo11UIResponder", "scrollViewWillEndDragging"]
-- ["CSo11UIResponder", "sectionIndexTitlesForTableView"]
 - !private ["CSo11UIResponder", "segueIdentifier"]
 - ["CSo11UIResponder", "selectedEvent"]
-- ["CSo11UIResponder", "tableView"]
 - !private ["CSo11UIResponder", "text"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "viewForZoomingInScrollView"]
-- !private ["CSo12UIScrollView", "dequeueReusableCellWithIdentifier"]
+- !private ["CSo12UIScrollView", "dequeueReusableCellWithReuseIdentifier"]
 - !private ["CSo12UIScrollView", "reloadData"]
 - !private ["CSo12UIScrollView", "text"]
 - !private ["PSo20UIScrollViewDelegate", "CLLocation"]
 - ["PSo20UIScrollViewDelegate", "Event"]
 - !private ["PSo20UIScrollViewDelegate", "String"]
 - !private ["PSo20UIScrollViewDelegate", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo20UIScrollViewDelegate", "collectionView"]
 - !private ["PSo20UIScrollViewDelegate", "createEventObject"]
 - !private ["PSo20UIScrollViewDelegate", "currentLatitude"]
 - !private ["PSo20UIScrollViewDelegate", "currentLongitude"]
@@ -1135,7 +1187,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "events"]
 - !private ["PSo20UIScrollViewDelegate", "fillUpThatData"]
 - !private ["PSo20UIScrollViewDelegate", "metersToMiles"]
-- ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
+- ["PSo20UIScrollViewDelegate", "numberOfSectionsInCollectionView"]
 - !private ["PSo20UIScrollViewDelegate", "performSegueWithIdentifier"]
 - ["PSo20UIScrollViewDelegate", "scrollViewDidEndDecelerating"]
 - ["PSo20UIScrollViewDelegate", "scrollViewDidEndDragging"]
@@ -1149,10 +1201,8 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "scrollViewWillBeginDragging"]
 - ["PSo20UIScrollViewDelegate", "scrollViewWillBeginZooming"]
 - ["PSo20UIScrollViewDelegate", "scrollViewWillEndDragging"]
-- ["PSo20UIScrollViewDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo20UIScrollViewDelegate", "segueIdentifier"]
 - !private ["PSo20UIScrollViewDelegate", "selectedEvent"]
-- ["PSo20UIScrollViewDelegate", "tableView"]
 - ["PSo20UIScrollViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo20UIScrollViewDelegate", ""]
 - !private ["PSo16UIStateRestoring", "CLLocation"]
@@ -1160,6 +1210,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "String"]
 - !private ["PSo16UIStateRestoring", "arc4random_uniform"]
 - ["PSo16UIStateRestoring", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo16UIStateRestoring", "collectionView"]
 - ["PSo16UIStateRestoring", "createEventObject"]
 - ["PSo16UIStateRestoring", "currentLatitude"]
 - ["PSo16UIStateRestoring", "currentLongitude"]
@@ -1176,7 +1227,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "init"]
 - !private ["PSo16UIStateRestoring", "metersToMiles"]
 - ["PSo16UIStateRestoring", "numberOfAttendees"]
-- ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
+- ["PSo16UIStateRestoring", "numberOfSectionsInCollectionView"]
 - !private ["PSo16UIStateRestoring", "performSegueWithIdentifier"]
 - ["PSo16UIStateRestoring", "prepareForSegue"]
 - !private ["PSo16UIStateRestoring", "print"]
@@ -1192,88 +1243,13 @@ depends-member:
 - ["PSo16UIStateRestoring", "scrollViewWillBeginDragging"]
 - ["PSo16UIStateRestoring", "scrollViewWillBeginZooming"]
 - ["PSo16UIStateRestoring", "scrollViewWillEndDragging"]
-- ["PSo16UIStateRestoring", "sectionIndexTitlesForTableView"]
 - !private ["PSo16UIStateRestoring", "segueIdentifier"]
 - ["PSo16UIStateRestoring", "selectedEvent"]
-- ["PSo16UIStateRestoring", "tableView"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", "viewForZoomingInScrollView"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["CSo17UIStoryboardSegue", "destinationViewController"]
 - !private ["CSo17UIStoryboardSegue", "identifier"]
-- !private ["CSo11UITableView", "dequeueReusableCellWithIdentifier"]
-- !private ["CSo11UITableView", "reloadData"]
-- ["CSo15UITableViewCell", "UILabel"]
-- !private ["CSo15UITableViewCell", "deinit"]
-- ["CSo15UITableViewCell", "eventAddress"]
-- ["CSo15UITableViewCell", "eventCityStateZip"]
-- ["CSo15UITableViewCell", "eventDateTime"]
-- ["CSo15UITableViewCell", "eventDistance"]
-- ["CSo15UITableViewCell", "eventLabel"]
-- ["CSo15UITableViewCell", "init"]
-- ["CSo15UITableViewCell", ""]
-- !private ["PSo21UITableViewDataSource", "CLLocation"]
-- ["PSo21UITableViewDataSource", "Event"]
-- !private ["PSo21UITableViewDataSource", "String"]
-- !private ["PSo21UITableViewDataSource", "calculateDistanceFromCurrentUserLocation"]
-- !private ["PSo21UITableViewDataSource", "createEventObject"]
-- !private ["PSo21UITableViewDataSource", "currentLatitude"]
-- !private ["PSo21UITableViewDataSource", "currentLongitude"]
-- !private ["PSo21UITableViewDataSource", "eventCellIdentifier"]
-- !private ["PSo21UITableViewDataSource", "events"]
-- !private ["PSo21UITableViewDataSource", "fillUpThatData"]
-- !private ["PSo21UITableViewDataSource", "metersToMiles"]
-- ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
-- !private ["PSo21UITableViewDataSource", "performSegueWithIdentifier"]
-- ["PSo21UITableViewDataSource", "scrollViewDidEndDecelerating"]
-- ["PSo21UITableViewDataSource", "scrollViewDidEndDragging"]
-- ["PSo21UITableViewDataSource", "scrollViewDidEndScrollingAnimation"]
-- ["PSo21UITableViewDataSource", "scrollViewDidEndZooming"]
-- ["PSo21UITableViewDataSource", "scrollViewDidScroll"]
-- ["PSo21UITableViewDataSource", "scrollViewDidScrollToTop"]
-- ["PSo21UITableViewDataSource", "scrollViewDidZoom"]
-- ["PSo21UITableViewDataSource", "scrollViewShouldScrollToTop"]
-- ["PSo21UITableViewDataSource", "scrollViewWillBeginDecelerating"]
-- ["PSo21UITableViewDataSource", "scrollViewWillBeginDragging"]
-- ["PSo21UITableViewDataSource", "scrollViewWillBeginZooming"]
-- ["PSo21UITableViewDataSource", "scrollViewWillEndDragging"]
-- ["PSo21UITableViewDataSource", "sectionIndexTitlesForTableView"]
-- !private ["PSo21UITableViewDataSource", "segueIdentifier"]
-- !private ["PSo21UITableViewDataSource", "selectedEvent"]
-- ["PSo21UITableViewDataSource", "tableView"]
-- ["PSo21UITableViewDataSource", "viewForZoomingInScrollView"]
-- ["PSo21UITableViewDataSource", ""]
-- !private ["PSo19UITableViewDelegate", "CLLocation"]
-- ["PSo19UITableViewDelegate", "Event"]
-- !private ["PSo19UITableViewDelegate", "String"]
-- !private ["PSo19UITableViewDelegate", "calculateDistanceFromCurrentUserLocation"]
-- !private ["PSo19UITableViewDelegate", "createEventObject"]
-- !private ["PSo19UITableViewDelegate", "currentLatitude"]
-- !private ["PSo19UITableViewDelegate", "currentLongitude"]
-- !private ["PSo19UITableViewDelegate", "eventCellIdentifier"]
-- !private ["PSo19UITableViewDelegate", "events"]
-- !private ["PSo19UITableViewDelegate", "fillUpThatData"]
-- !private ["PSo19UITableViewDelegate", "metersToMiles"]
-- ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo19UITableViewDelegate", "performSegueWithIdentifier"]
-- ["PSo19UITableViewDelegate", "scrollViewDidEndDecelerating"]
-- ["PSo19UITableViewDelegate", "scrollViewDidEndDragging"]
-- ["PSo19UITableViewDelegate", "scrollViewDidEndScrollingAnimation"]
-- ["PSo19UITableViewDelegate", "scrollViewDidEndZooming"]
-- ["PSo19UITableViewDelegate", "scrollViewDidScroll"]
-- ["PSo19UITableViewDelegate", "scrollViewDidScrollToTop"]
-- ["PSo19UITableViewDelegate", "scrollViewDidZoom"]
-- ["PSo19UITableViewDelegate", "scrollViewShouldScrollToTop"]
-- ["PSo19UITableViewDelegate", "scrollViewWillBeginDecelerating"]
-- ["PSo19UITableViewDelegate", "scrollViewWillBeginDragging"]
-- ["PSo19UITableViewDelegate", "scrollViewWillBeginZooming"]
-- ["PSo19UITableViewDelegate", "scrollViewWillEndDragging"]
-- ["PSo19UITableViewDelegate", "sectionIndexTitlesForTableView"]
-- !private ["PSo19UITableViewDelegate", "segueIdentifier"]
-- !private ["PSo19UITableViewDelegate", "selectedEvent"]
-- ["PSo19UITableViewDelegate", "tableView"]
-- ["PSo19UITableViewDelegate", "viewForZoomingInScrollView"]
-- ["PSo19UITableViewDelegate", ""]
 - !private ["PSo11UITextInput", "text"]
 - !private ["PSo17UITextInputTraits", "text"]
 - !private ["CSo10UITextView", "text"]
@@ -1282,10 +1258,11 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "String"]
 - !private ["PSo18UITraitEnvironment", "arc4random_uniform"]
 - ["PSo18UITraitEnvironment", "calculateDistanceFromCurrentUserLocation"]
+- ["PSo18UITraitEnvironment", "collectionView"]
 - ["PSo18UITraitEnvironment", "createEventObject"]
 - ["PSo18UITraitEnvironment", "currentLatitude"]
 - ["PSo18UITraitEnvironment", "currentLongitude"]
-- !private ["PSo18UITraitEnvironment", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo18UITraitEnvironment", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSo18UITraitEnvironment", "event"]
 - ["PSo18UITraitEnvironment", "eventAddress"]
 - !private ["PSo18UITraitEnvironment", "eventCellIdentifier"]
@@ -1304,7 +1281,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "metersToMiles"]
 - ["PSo18UITraitEnvironment", "numberOfAttendees"]
-- ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
+- ["PSo18UITraitEnvironment", "numberOfSectionsInCollectionView"]
 - !private ["PSo18UITraitEnvironment", "performSegueWithIdentifier"]
 - ["PSo18UITraitEnvironment", "prepareForSegue"]
 - !private ["PSo18UITraitEnvironment", "print"]
@@ -1321,16 +1298,14 @@ depends-member:
 - ["PSo18UITraitEnvironment", "scrollViewWillBeginDragging"]
 - ["PSo18UITraitEnvironment", "scrollViewWillBeginZooming"]
 - ["PSo18UITraitEnvironment", "scrollViewWillEndDragging"]
-- ["PSo18UITraitEnvironment", "sectionIndexTitlesForTableView"]
 - !private ["PSo18UITraitEnvironment", "segueIdentifier"]
 - ["PSo18UITraitEnvironment", "selectedEvent"]
-- ["PSo18UITraitEnvironment", "tableView"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", "viewForZoomingInScrollView"]
 - ["PSo18UITraitEnvironment", ""]
 - ["CSo6UIView", "UILabel"]
-- !private ["CSo6UIView", "dequeueReusableCellWithIdentifier"]
+- !private ["CSo6UIView", "dequeueReusableCellWithReuseIdentifier"]
 - ["CSo6UIView", "eventAddress"]
 - ["CSo6UIView", "eventCityStateZip"]
 - ["CSo6UIView", "eventDateTime"]
@@ -1340,23 +1315,23 @@ depends-member:
 - !private ["CSo6UIView", "reloadData"]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "AnyObject"]
-- ["CSo16UIViewController", "CGFloat"]
 - !private ["CSo16UIViewController", "CLLocation"]
 - !private ["CSo16UIViewController", "CLLocationDegrees"]
 - !private ["CSo16UIViewController", "DetailViewController"]
 - !private ["CSo16UIViewController", "Double"]
 - ["CSo16UIViewController", "Event"]
-- !private ["CSo16UIViewController", "EventTableViewCell"]
+- !private ["CSo16UIViewController", "EventCollectionViewCell"]
 - ["CSo16UIViewController", "Int"]
 - ["CSo16UIViewController", "NSIndexPath"]
 - !private ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UICollectionView"]
+- ["CSo16UIViewController", "UICollectionViewCell"]
 - ["CSo16UIViewController", "UILabel"]
 - ["CSo16UIViewController", "UIStoryboardSegue"]
-- ["CSo16UIViewController", "UITableView"]
-- ["CSo16UIViewController", "UITableViewCell"]
 - ["CSo16UIViewController", "UITextView"]
 - !private ["CSo16UIViewController", "arc4random_uniform"]
 - ["CSo16UIViewController", "calculateDistanceFromCurrentUserLocation"]
+- ["CSo16UIViewController", "collectionView"]
 - ["CSo16UIViewController", "createEventObject"]
 - ["CSo16UIViewController", "currentLatitude"]
 - ["CSo16UIViewController", "currentLongitude"]
@@ -1374,7 +1349,7 @@ depends-member:
 - ["CSo16UIViewController", "init"]
 - !private ["CSo16UIViewController", "metersToMiles"]
 - ["CSo16UIViewController", "numberOfAttendees"]
-- ["CSo16UIViewController", "numberOfSectionsInTableView"]
+- ["CSo16UIViewController", "numberOfSectionsInCollectionView"]
 - !private ["CSo16UIViewController", "performSegueWithIdentifier"]
 - ["CSo16UIViewController", "prepareForSegue"]
 - !private ["CSo16UIViewController", "print"]
@@ -1390,10 +1365,8 @@ depends-member:
 - ["CSo16UIViewController", "scrollViewWillBeginDragging"]
 - ["CSo16UIViewController", "scrollViewWillBeginZooming"]
 - ["CSo16UIViewController", "scrollViewWillEndDragging"]
-- ["CSo16UIViewController", "sectionIndexTitlesForTableView"]
 - !private ["CSo16UIViewController", "segueIdentifier"]
 - ["CSo16UIViewController", "selectedEvent"]
-- ["CSo16UIViewController", "tableView"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", "viewForZoomingInScrollView"]
 - ["CSo16UIViewController", ""]
@@ -1456,7 +1429,7 @@ depends-member:
 - !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
 - !private ["PSs12_Reflectable", "append"]
 - !private ["PSs12_Reflectable", "count"]
-- !private ["PSs12_Reflectable", "dequeueReusableCellWithIdentifier"]
+- !private ["PSs12_Reflectable", "dequeueReusableCellWithReuseIdentifier"]
 - ["PSs12_Reflectable", "eventAddress"]
 - ["PSs12_Reflectable", "eventCityStateZip"]
 - ["PSs12_Reflectable", "eventDateTime"]
@@ -1481,11 +1454,11 @@ depends-nominal:
 - !private "Sb"
 - !private "PSs25BooleanLiteralConvertible"
 - !private "PSs11BooleanType"
-- !private "V12CoreGraphics7CGFloat"
 - !private "CSo10CLLocation"
 - "PSs11CVarArgType"
 - !private "VSs9Character"
 - "PSs14CollectionType"
+- "C21DenverStartupWeekDemo24CollectionViewController"
 - !private "PSs10Comparable"
 - "PSs28CustomDebugStringConvertible"
 - "PSs23CustomStringConvertible"
@@ -1493,7 +1466,7 @@ depends-nominal:
 - !private "Sd"
 - "PSs9Equatable"
 - "C21DenverStartupWeekDemo5Event"
-- "C21DenverStartupWeekDemo18EventTableViewCell"
+- "C21DenverStartupWeekDemo23EventCollectionViewCell"
 - !private "PSs41ExtendedGraphemeClusterLiteralConvertible"
 - !private "Sf"
 - !private "PSs16ForwardIndexType"
@@ -1509,7 +1482,6 @@ depends-nominal:
 - !private "PSs21IntegerArithmeticType"
 - !private "PSs25IntegerLiteralConvertible"
 - !private "PSs11IntegerType"
-- "C21DenverStartupWeekDemo18MainViewController"
 - !private "PSs14MirrorPathType"
 - "PSs21MutableCollectionType"
 - "PSs16MutableIndexable"
@@ -1539,10 +1511,14 @@ depends-nominal:
 - "PSo29UIAccessibilityIdentification"
 - "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
+- "CSo24UICollectionReusableView"
+- !private "CSo16UICollectionView"
+- "CSo20UICollectionViewCell"
+- "PSo26UICollectionViewDataSource"
+- "PSo24UICollectionViewDelegate"
 - "PSo18UIContentContainer"
 - "PSo17UICoordinateSpace"
 - "PSo13UIDynamicItem"
-- "PSo27UIGestureRecognizerDelegate"
 - !private "PSo10UIKeyInput"
 - !private "CSo7UILabel"
 - "CSo11UIResponder"
@@ -1550,10 +1526,6 @@ depends-nominal:
 - "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
 - !private "CSo17UIStoryboardSegue"
-- !private "CSo11UITableView"
-- "CSo15UITableViewCell"
-- "PSo21UITableViewDataSource"
-- "PSo19UITableViewDelegate"
 - !private "PSo11UITextInput"
 - !private "PSo17UITextInputTraits"
 - !private "CSo10UITextView"
@@ -1595,4 +1567,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "99c994e7cef6b6375b057b944d146e5e"
+interface-hash: "9865e1bb24f42583b8c77804cc00bb77"
