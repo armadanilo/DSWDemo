@@ -52,14 +52,16 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08I-0p-xAK">
                                 <rect key="frame" x="61" y="81" width="51" height="21"/>
+                                <accessibility key="accessibilityConfiguration" hint="Double tap to get directions to the event"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.59607843140000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2M-bf-oac" userLabel="Directions Button">
                                 <rect key="frame" x="20" y="86" width="560" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" hint="">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <state key="normal">
                                     <color key="titleColor" red="0.015686274510000001" green="0.56470588239999997" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,6 +72,9 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="laf-0m-gGB">
                                 <rect key="frame" x="20" y="114" width="560" height="320"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -95,6 +100,9 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_location" translatesAutoresizingMaskIntoConstraints="NO" id="HRO-pd-Uke">
                                 <rect key="frame" x="20" y="81" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="" label="">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rMs-TR-35u"/>
                                     <constraint firstAttribute="width" constant="30" id="wCb-XB-wne"/>
@@ -146,6 +154,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="directionsButton" destination="S2M-bf-oac" id="cGT-US-dCh"/>
                         <outlet property="eventDescription" destination="laf-0m-gGB" id="1B5-3f-kA3"/>
                         <outlet property="eventWhat" destination="jwg-Oe-UnH" id="DBN-Db-p60"/>
                         <outlet property="eventWhen" destination="lB0-ST-VJQ" id="vSa-w0-HVk"/>
@@ -176,7 +185,7 @@
                                     <constraint firstAttribute="width" constant="106" id="geq-zZ-g3t"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danilo's Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm3-ND-8fb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My favorited events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xm3-ND-8fb">
                                 <rect key="frame" x="131" y="37" width="452" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -207,6 +216,9 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Event Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N36-dH-L4Q">
                                                     <rect key="frame" x="17" y="8" width="337" height="100"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="45o-Xe-uqn"/>
                                                     </constraints>
@@ -216,6 +228,9 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Event Time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu4-6k-Kkh">
                                                     <rect key="frame" x="17" y="121" width="337" height="26"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -225,18 +240,27 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Address" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlC-63-Erd">
                                                             <rect key="frame" x="17" y="24" width="337" height="22"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <bool key="isElement" value="NO"/>
+                                                            </accessibility>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="City, State, Zip" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-IT-If6">
                                                             <rect key="frame" x="17" y="54" width="337" height="22"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <bool key="isElement" value="NO"/>
+                                                            </accessibility>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Distance" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOb-vF-tuf">
                                                             <rect key="frame" x="17" y="102" width="337" height="30"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <bool key="isElement" value="NO"/>
+                                                            </accessibility>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                             <color key="textColor" red="0.22352941179999999" green="0.59607843140000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -251,6 +275,7 @@
                                                         <constraint firstItem="OlC-63-Erd" firstAttribute="leading" secondItem="9Wb-88-FXC" secondAttribute="leading" constant="17" id="Nmz-tC-CmK"/>
                                                         <constraint firstItem="ZOb-vF-tuf" firstAttribute="leading" secondItem="9Wb-88-FXC" secondAttribute="leading" constant="17" id="ayw-zn-pm4"/>
                                                         <constraint firstItem="OlC-63-Erd" firstAttribute="top" secondItem="9Wb-88-FXC" secondAttribute="top" constant="24" id="evZ-jQ-2Q2"/>
+                                                        <constraint firstAttribute="height" constant="235" id="f2m-I3-1rI"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ejf-IT-If6" secondAttribute="trailing" constant="16" id="h1D-hv-l4y"/>
                                                         <constraint firstItem="Ejf-IT-If6" firstAttribute="top" secondItem="OlC-63-Erd" secondAttribute="bottom" constant="8" id="wwn-2i-Vcj"/>
                                                     </constraints>
@@ -260,6 +285,7 @@
                                         </view>
                                         <color key="backgroundColor" red="0.32941176470588235" green="0.396078431372549" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="9Wb-88-FXC" firstAttribute="top" secondItem="vjp-A0-Pxu" secondAttribute="topMargin" constant="209" id="2aM-rn-pXB"/>
                                             <constraint firstItem="9Wb-88-FXC" firstAttribute="leading" secondItem="vjp-A0-Pxu" secondAttribute="leadingMargin" constant="-8" id="45h-YO-KMq"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="9Wb-88-FXC" secondAttribute="bottom" id="7WK-w5-Zwv"/>
                                             <constraint firstItem="Bu4-6k-Kkh" firstAttribute="top" secondItem="N36-dH-L4Q" secondAttribute="bottom" constant="13" id="Dia-3e-rRU"/>
@@ -269,7 +295,6 @@
                                             <constraint firstItem="Bu4-6k-Kkh" firstAttribute="leading" secondItem="vjp-A0-Pxu" secondAttribute="leadingMargin" constant="9" id="hRa-kJ-maz"/>
                                             <constraint firstItem="N36-dH-L4Q" firstAttribute="leading" secondItem="vjp-A0-Pxu" secondAttribute="leadingMargin" constant="9" id="v2E-xz-mvj"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Bu4-6k-Kkh" secondAttribute="trailing" constant="8" id="vjz-sQ-xV5"/>
-                                            <constraint firstItem="9Wb-88-FXC" firstAttribute="top" secondItem="Bu4-6k-Kkh" secondAttribute="bottom" constant="70" id="voa-4i-8AN"/>
                                         </constraints>
                                         <size key="customSize" width="370" height="460"/>
                                         <connections>

@@ -58,7 +58,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             information: "In the U.S. alone, nearly 6.7 million people 16 and older are visually impaired — meaning, even with corrective lenses, they must use alternative methods to engage in activities that people with vision can do. Developing apps that are accessible means making it possible for those millions of blind and visually impaired people to do things like manage their health with iTriage and track sales leads via Salesforce the way sighted people do. \n\nIn this session, Denver-based experts Patrick Leonard, CTO of iTriage/Aetna Digital Products, and Mike Hess, Blind Institute of Technology founder and executive director, will do a little show-and-tell on what goes into developing apps that are accessible for the blind and visually impaired based on real apps that are in development. \n\nThey’ll also discuss the challenges they must overcome as a development team, and why making your apps accessible is a win for you as well as your users.",
             date: "Thursday, October 1",
             time: "12PM - 1:30PM",
-            address: "475 17th St., Ste. 200",
+            address: "475 17th Street, Suite 200",
             city: "Denver",
             state: "CO",
             zipcode: "80202",
@@ -82,7 +82,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             information: "This panel will bridge both the Design Track and the Development Track. \n\nAnyone who has managed or worked on a team creating a digital product or website knows exactly what I’m talking about when I say design vs dev. It is like there is an unwritten rule that designers and developers should not like each other and it is their personal responsibility to make the others job as hard as possible. Why is this? \n\nIs it a difference in personalities? A problem of egos? A lack of rudimentary social skills? \n\nPerhaps. Or just maybe, designer and developers have never be offered an alternative and they are just following the path they believe their role is supposed to by living up to and projecting the stereotypes passed on to them. The individuals on this panel have all grappled at finding better ways for teams of designers and developers to work together more efficiently and more effectively. The panel will discuss how they have found success and what continues to trip them up today. Panelists include:\n\nBree Thomas, Developer at Mode Set, Co-Founder of The Aha Method and formerly Group Account Director at Factory Design Labs \n\nMario Rini, Digital Director at Strada Advertising, formerly Creative Director at io \n\nOlivia James, Marketing Program Manager at K2. \n\nBryan Lesniewski, UX Designer and Product Owner at TransUnion \n\nJason Hummel, Founder and Development Lead at Chalk \n\nJustin Gitlin, Director/Developer at Mode Set \n\nModerator:\nIan T. Nordeck, Creative Director and Consultant, former Creative Director at SpireMedia \n\nCoffee and light breakfast provided. \n\nHosted by: Ian T. Nordeck",
             date: "Thursday, October 1",
             time: "10AM - 11:30AM",
-            address: "3461 Ringsby Court #220",
+            address: "3461 Ringsby Court, Unit #220",
             city: "Denver", state: "CO",
             zipcode: "80202",
             distance: 0.0,
@@ -124,6 +124,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         eventCell.eventAddress.text = eventAtIndex.address
         eventCell.eventCityStateZip.text = "\(eventAtIndex.city), \(eventAtIndex.state) \(eventAtIndex.zipcode)"
         eventCell.eventDistance.text = String(format: "%.2f miles", eventAtIndex.distance)
+        
+        eventCell.isAccessibilityElement = true
+        eventCell.accessibilityValue = "Event name: \(eventAtIndex.title), When: \(eventAtIndex.date), \(eventAtIndex.time), Address: \(eventAtIndex.address), \(eventAtIndex.city), \(eventAtIndex.state), \(eventAtIndex.zipcode), Distance: \(eventAtIndex.distance) miles"
+        eventCell.accessibilityHint = "Double tap for more event details"
+        
         return eventCell
     }
 
@@ -146,9 +151,15 @@ class DetailViewController: UIViewController {
     @IBOutlet var eventWhere: UILabel!
     @IBOutlet var numberOfAttendees: UILabel!
     @IBOutlet var eventDescription: UITextView!
+    @IBOutlet var directionsButton: UIButton!
     
     @IBAction func getDirections() {
-        print("Get directions selected")
+        var addressString = "http://maps.apple.com?q="
+        addressString += event.address + " " ?? ""
+        addressString += event.city + " " ?? ""
+        addressString += event.state + " " ?? ""
+        addressString += event.zipcode + " " ?? ""
+        openURLWithString(addressString)
     }
     
     // MARK: Vars
@@ -161,9 +172,27 @@ class DetailViewController: UIViewController {
     }
     
     // MARK: Private methods
+    private func openURLWithString(param: String) {
+        let escapedString = param.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        if let paramURL:NSURL = NSURL(string:escapedString) {
+            if(UIApplication.sharedApplication().canOpenURL(paramURL)) {
+                UIApplication.sharedApplication().openURL(paramURL)
+            } else {
+                alertControllerWithTitleAndMessage("Error", message: "Device doesn't support this action.")
+            }
+        }
+    }
+    
+    private func alertControllerWithTitleAndMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let dealWithItAction = UIAlertAction(title: "OK", style: .Cancel) { _ in /*User dealt with it. */ }
+        alertController.addAction(dealWithItAction)
+        self.presentViewController(alertController, animated: true) { /* Alert presented itself. */ }
+    }
+    
     private func fillOutData() {
         eventWhat.text = event.title
-        eventWhen.text = "\(event.date) \n\(event.time)"
+        eventWhen.text = "\(event.date), \(event.time)"
         eventWhere.text = "\(event.address) \n\(event.city) \(event.state), \(event.zipcode)"
         numberOfAttendees.text = "Number of attendees: \(arc4random_uniform(250) + 1)"
         eventDescription.text = event.information
